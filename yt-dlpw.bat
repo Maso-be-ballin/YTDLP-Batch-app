@@ -37,7 +37,7 @@ goto start
 cls
 set /p URL=VIDEO URL HERE:
 echo.
-yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail %URL%
+appdata/yt-dlp-batch-v1.1.0/yt-dlp.exe -x --audio-format mp3 --audio-quality 0 --embed-thumbnail %URL%
 echo.
 goto close
 
@@ -45,7 +45,7 @@ goto close
 cls
 set /p URL=VIDEO URL HERE:
 echo.
-yt-dlp -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]" --merge-output-format mp4 %URL%
+appdata/yt-dlp-batch-v1.1.0/yt-dlp.exe -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]" --merge-output-format mp4 %URL%
 echo.
 goto close
 
