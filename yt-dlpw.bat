@@ -32,15 +32,18 @@ echo Invalid choice, try again.
 goto start
 
 :audio
+cls
 set /p URL=VIDEO URL HERE:
 echo.
-yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail URL
+yt-dlp -x --audio-format mp3 --audio-quality 0 --embed-thumbnail %URL%
 echo.
 goto close
 
 :video
+cls
+set /p URL=VIDEO URL HERE:
 echo.
-yt-dlp -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]" --merge-output-format mp4 URL
+yt-dlp -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]" --merge-output-format mp4 %URL%
 echo.
 goto close
 
