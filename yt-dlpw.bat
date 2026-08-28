@@ -26,17 +26,17 @@ endlocal
 
 SET /P choice=Type 1, 2, or 3: 
 if not '%choice%'=='' set choice=%choice:~0,1%
-if '%choice%'=='1' goto '%choice%'
-if '%choice%'=='2' goto '%choice%'
-if '%choice%'=='3' goto '%choice%'
+if '%choice%'=='1' goto audio
+if '%choice%'=='2' goto video
+if '%choice%'=='3' goto close
 echo Invalid choice, try again.
 goto start
 
-:1
+:audio
 echo 1
 goto close
 
-:2
+:video
 echo 2
 goto close
 
