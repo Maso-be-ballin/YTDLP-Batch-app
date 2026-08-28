@@ -18,8 +18,10 @@ for /f "tokens=1,2 delims==" %%A in ('findstr /i "^version=" "%configFile%"') do
 for /f "tokens=1,2 delims==" %%A in ('findstr /i "^creator=" "%configFile%"') do (
     set "creator=%%B"
 )
+
 :start
-echo Version: %version% | Creator: %creator%
+echo Version: %version%  
+echo Creator: %creator%
 
 endlocal
 
