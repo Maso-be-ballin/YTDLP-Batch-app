@@ -47,7 +47,7 @@ yt-dlp -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]" --me
 echo.
 goto close
 
-:3
+:close
 echo close
 pause
 exit
