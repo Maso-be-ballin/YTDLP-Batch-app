@@ -47,7 +47,7 @@ cls
 echo video menu
 set /p URL=VIDEO URL HERE:
 echo.
-appdata/yt-dlp-batch-v1.1.0/yt-dlp.exe -o ..\..\YTDLP batch script app i made so cool yea\downloads  -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]" --merge-output-format mp4 %URL%
+"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -o ..\..\YTDLP batch script app i made so cool yea\downloads  -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]" --merge-output-format mp4 %URL%
 echo.
 goto close
 
