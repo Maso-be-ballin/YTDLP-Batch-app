@@ -1,7 +1,8 @@
 
 ```
-gubby this gubby that gubby wifi gubby fries
+this is testing branch, new things go here
 ```
 ## Dev List
 - [x] basics done
+- [x] video downloads
 - [ ] Finished?
