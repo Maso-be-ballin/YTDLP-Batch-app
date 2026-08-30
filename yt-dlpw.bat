@@ -38,7 +38,7 @@ cls
 echo audio menu
 set /p URL=VIDEO URL HERE:
 echo.
-appdata/yt-dlp-batch-v1.1.0/yt-dlp.exe ..\..\YTDLP batch script app i made so cool yea\downloads -x --audio-format mp3 --audio-quality 0 --embed-thumbnail %URL%
+"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -o "downloads\audio\%(title)s.%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail %URL%
 echo.
 goto close
 
@@ -47,7 +47,7 @@ cls
 echo video menu
 set /p URL=VIDEO URL HERE:
 echo.
-"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -o "..\downloads\%(title)s.%(ext)s" -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]" --merge-output-format mp4 %URL%
+"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -o "downloads\video\%(title)s.%(ext)s" -f "bv*[height<=1080][ext=mp4]+ba[ext=m4a]/b[height<=1080][ext=mp4]" --merge-output-format mp4 %URL%
 echo.
 goto close
 
