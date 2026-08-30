@@ -6,4 +6,8 @@ gubby this gubby that gubby wifi gubby fries
 > what
 >> ikr
 >ey
->> ey
+# shed lets sky
+> she lets k
+> >no shed lets sky
+why is it like that
+> idk
