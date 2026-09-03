@@ -130,6 +130,8 @@ goto close
 :list
 cls
 echo list menu
+echo [1] Download Audio
+echo [2] Download Video
 echo.
 SET /P choice="Type 1, OR 2 then press ENTER: "
 if not '%choice%'=='' set choice=%choice:~0,1%
@@ -143,7 +145,6 @@ cls
 echo list-audio menu
 echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\audio" -o "%%(title)s.%%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail --embed-metadata -a list.txt --download-archive old.txt
-echo.
 echo.
 goto close
 
