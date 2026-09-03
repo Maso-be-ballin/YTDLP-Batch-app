@@ -1,2 +1,2 @@
-Took this from a github repo. Modified.
+Took this from a github repo. Modified tho so not really.
 Link: https://github.com/edinsuta/yt-dlp-batch/releases/tag/v1.1.0
