@@ -20,14 +20,9 @@ for /f "tokens=1,2 delims==" %%A in ('findstr /i "^creator=" "%configFile%"') do
 )
 
 :start
-echo Version: %version%  
-echo Creator: %creator%
-
-endlocal
-
 :: ===== Editable Settings =====
-set "width=26"
-set "text="echo Version: %version% | Creator: %creator%"
+set "width=50"
+set "text=Version: %version% | Creator: %creator%"
 set "cornerChar=+"
 set "hChar=-"
 set "vChar=|"
@@ -65,9 +60,15 @@ set "line=!line!%vChar%"
 
 echo !line!
 echo !bottom!
-echo.
 
-SET /P choice=Type 1, 2, 3, or 4 then press ENTER: "
+endlocal
+echo.
+echo [1] Download Audio
+echo [2] Download Video
+echo [3] Download from List
+echo [4] Exit
+echo.
+SET /P choice="Type 1, 2, 3, or 4 then press ENTER: "
 if not '%choice%'=='' set choice=%choice:~0,1%
 if '%choice%'=='1' goto audio
 if '%choice%'=='2' goto video
@@ -79,9 +80,9 @@ goto start
 :audio
 cls
 echo audio menu
-set /p URL=VIDEO URL HERE:
+set /p "URL=VIDEO URL HERE: "
 echo.
-"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\audio" -o "%%(title)s.%%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail --embed-metadata %URL%
+"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\audio" -o "%%(title)s.%%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail --embed-metadata --download-archive old.txt %URL%
 echo.
 goto close
 
@@ -90,10 +91,26 @@ cls
 echo video menu
 set /p "URL=VIDEO URL HERE: "
 echo.
-"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]" --merge-output-format mp4 --embed-thumbnail --embed-metadata %URL%
+"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]" --merge-output-format mp4 --embed-thumbnail --embed-metadata --download-archive old.txt 7%URL%
 echo.
 goto close
 
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
 :: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
 :: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
 :: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
@@ -112,9 +129,16 @@ goto close
 
 :list
 cls
+echo list menu
+echo.
+SET /P choice="Type 1, OR 2 then press ENTER: "
+if not '%choice%'=='' set choice=%choice:~0,1%
+if '%choice%'=='1' goto list-audio
+if '%choice%'=='2' goto list-video
+echo Invalid choice, try again.
+goto start
 
-
-:audio
+:list-audio
 cls
 echo list-audio menu
 echo.
@@ -123,7 +147,7 @@ echo.
 echo.
 goto close
 
-:video
+:list-video
 cls
 echo list-video menu
 echo.
