@@ -1,6 +1,6 @@
 
 ```
-gubby this gubby that gubby wifi gubby fries
+updated you now bro cool!
 ```
 # do u live in a shed
 > what
@@ -9,5 +9,5 @@ gubby this gubby that gubby wifi gubby fries
 # shed lets sky
 > she lets k
 > >no shed lets sky
-why is it like that
+## why is it like that
 > idk

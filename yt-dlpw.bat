@@ -25,11 +25,54 @@ echo Creator: %creator%
 
 endlocal
 
-SET /P choice=Type 1, 2, or 3: 
+:: ===== Editable Settings =====
+set "width=26"
+set "text="echo Version: %version% | Creator: %creator%"
+set "cornerChar=+"
+set "hChar=-"
+set "vChar=|"
+:: =============================
+
+:: Build top border
+set "top=%cornerChar%"
+for /l %%i in (1,1,%width%) do set "top=!top!%hChar%"
+set "top=!top!%cornerChar%"
+
+:: Build bottom border
+set "bottom=%cornerChar%"
+for /l %%i in (1,1,%width%) do set "bottom=!bottom!%hChar%"
+set "bottom=!bottom!%cornerChar%"
+
+echo !top!
+
+:: Calculate text length
+set "len=0"
+for /l %%i in (0,1,200) do (
+    if "!text:~%%i,1!"=="" goto doneLen
+    set /a len+=1
+)
+:doneLen
+
+:: Center text
+set /a left=(width - len) / 2
+set /a right=width - len - left
+
+set "line=%vChar%"
+for /l %%i in (1,1,%left%) do set "line=!line! "
+set "line=!line!!text!"
+for /l %%i in (1,1,%right%) do set "line=!line! "
+set "line=!line!%vChar%"
+
+echo !line!
+echo !bottom!
+echo.
+
+SET /P choice=Type 1, 2, 3, or 4 then press ENTER: "
 if not '%choice%'=='' set choice=%choice:~0,1%
 if '%choice%'=='1' goto audio
 if '%choice%'=='2' goto video
-if '%choice%'=='3' goto close
+if '%choice%'=='3' goto list
+if '%choice%'=='4' goto close 
 echo Invalid choice, try again.
 goto start
 
@@ -51,6 +94,45 @@ echo.
 echo.
 goto close
 
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+:: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
+
+:list
+cls
+
+
+:audio
+cls
+echo list-audio menu
+echo.
+"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\audio" -o "%%(title)s.%%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail --embed-metadata -a list.txt --download-archive old.txt
+echo.
+echo.
+goto close
+
+:video
+cls
+echo list-video menu
+echo.
+"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]" --merge-output-format mp4 --embed-thumbnail --embed-metadata -a list.txt --download-archive old.txt
+echo.
+goto close
+
+
+:: Close the script
 :close
 echo press enter to close
 pause
