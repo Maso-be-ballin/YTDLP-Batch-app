@@ -2,11 +2,7 @@
 ```
 this is testing branch, new things go here
 ```
-## Dev List
-- [x] basics done
-- [x] video downloads
-- [ ] updates
-- [ ] Finished?
+# Dev Progress: ![](https://geps.dev/progress/20.75)
 
 # updated you now bro cool!
 > block quotes
