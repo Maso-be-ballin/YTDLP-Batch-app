@@ -91,7 +91,7 @@ cls
 echo video menu
 set /p "URL=VIDEO URL HERE: "
 echo.
-"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]" --merge-output-format mp4 --embed-thumbnail --embed-metadata --download-archive old.txt 7%URL%
+"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bv[ext=webm]+ba[ext=m4a]" --merge-output-format mp4 --embed-thumbnail --embed-metadata --download-archive old.txt %URL%
 echo.
 goto close
 
@@ -152,7 +152,7 @@ goto close
 cls
 echo list-video menu
 echo.
-"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bestvideo[ext=mp4][vcodec*=h264]+bestaudio[ext=m4a]/best[ext=mp4]" --merge-output-format mp4 --embed-thumbnail --embed-metadata -a list.txt --download-archive old.txt
+"appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bv[ext=webm]+ba[ext=m4a]" --merge-output-format mp4 --embed-thumbnail --embed-metadata -a list.txt --download-archive old.txt
 echo.
 goto close
 
