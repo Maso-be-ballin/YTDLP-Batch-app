@@ -84,7 +84,7 @@ set /p "URL=VIDEO URL HERE: "
 echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\audio" -o "%%(title)s.%%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail --embed-metadata --download-archive old.txt %URL%
 echo.
-goto close
+goto start
 
 :video
 cls
@@ -93,7 +93,7 @@ set /p "URL=VIDEO URL HERE: "
 echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bv[ext=webm]+ba[ext=m4a]" --merge-output-format mp4 --embed-thumbnail --embed-metadata --download-archive old.txt %URL%
 echo.
-goto close
+goto start
 
 :: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
 :: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
@@ -142,7 +142,7 @@ goto start
 
 :list-audio
 cls
-echo list-audio menu
+echo list-audio menu, edit list.txt to add your links
 echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\audio" -o "%%(title)s.%%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail --embed-metadata -a list.txt --download-archive old.txt
 echo.
@@ -150,7 +150,7 @@ goto close
 
 :list-video
 cls
-echo list-video menu
+echo list-video menu, edit list.txt to add your links
 echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bv[ext=webm]+ba[ext=m4a]" --merge-output-format mp4 --embed-thumbnail --embed-metadata -a list.txt --download-archive old.txt
 echo.
