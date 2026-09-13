@@ -1,8 +1,8 @@
 
 ```
-this is testing branch, new things go here
+this is main branch, reassesses go here
 ```
-## Dev Progress: ![](https://geps.dev/progress/22)
+## Dev Progress: ![](https://geps.dev/progress/25)
 
 # updated you now bro cool!
 > block quotes
