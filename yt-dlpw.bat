@@ -60,8 +60,6 @@ set "line=!line!%vChar%"
 
 echo !line!
 echo !bottom!
-
-endlocal
 echo.
 echo [1] Download Audio
 echo [2] Download Video
@@ -148,6 +146,7 @@ echo list-audio menu, edit list.txt to add your links
 echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\audio" -o "%%(title)s.%%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail --embed-metadata -a list.txt --download-archive old.txt
 echo.
+cls
 goto close
 
 :list-video
@@ -156,6 +155,7 @@ echo list-video menu, edit list.txt to add your links
 echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bv[ext=webm]+ba[ext=m4a]" --merge-output-format mp4 --embed-thumbnail --embed-metadata -a list.txt --download-archive old.txt
 echo.
+cls
 goto close
 
 
