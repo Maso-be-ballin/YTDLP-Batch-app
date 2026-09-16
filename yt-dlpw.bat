@@ -1,6 +1,7 @@
 @echo off
 setlocal enabledelayedexpansion
 
+:start
 set "configFile=config.ini"
 
 :: Check if config.ini exists
@@ -19,7 +20,6 @@ for /f "tokens=1,2 delims==" %%A in ('findstr /i "^creator=" "%configFile%"') do
     set "creator=%%B"
 )
 
-:start
 :: ===== Editable Settings =====
 set "width=50"
 set "text=Version: %version% | Creator: %creator%"
@@ -84,6 +84,7 @@ set /p "URL=VIDEO URL HERE: "
 echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\audio" -o "%%(title)s.%%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail --embed-metadata --download-archive old.txt %URL%
 echo.
+cls
 goto start
 
 :video
@@ -93,6 +94,7 @@ set /p "URL=VIDEO URL HERE: "
 echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bv[ext=webm]+ba[ext=m4a]" --merge-output-format mp4 --embed-thumbnail --embed-metadata --download-archive old.txt %URL%
 echo.
+cls
 goto start
 
 :: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
