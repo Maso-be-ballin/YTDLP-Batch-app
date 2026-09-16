@@ -1,6 +1,6 @@
-
+![Static Badge](https://img.shields.io/badge/github-My_repos-orange?style=plastic&logo=github&link=www.youtube.com)
 ```
-this is main branch, reassesses go here
+this is main branch, **MAIN** Releases go here
 ```
 ## Dev Progress: ![](https://geps.dev/progress/25)
 
