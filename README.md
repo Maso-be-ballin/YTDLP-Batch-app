@@ -1,7 +1,7 @@
-![](https://img.shields.io/badge/GitHub-Maso--Be--Ballin-green?style=plastic&logo=github&logoSize=auto&link=https%3A%2F%2Fgithub.com%2FMaso-be-ballin%3Ftab%3Drepositories&link=https%3A%2F%2Fgithub.com%2FMaso-be-ballin%3Ftab%3Drepositories) ![](https://img.shields.io/badge/Version-1.2--fix1-red?style=plastic)
-```
-this is main branch, **MAIN** Releases go here
-```
+# badges: ![](https://custom-icon-badges.demolab.com/badge/Version-1.2fix1-green.svg?logo=git-branch-24)  ![](https://custom-icon-badges.demolab.com/badge/Version-1.2fix1-green.svg?logo=git-branch-24)
+
+`this is the main branch, Releases go here.`
+
 ## Dev Progress: ![](https://geps.dev/progress/25)
 
 # Better Title To Come
