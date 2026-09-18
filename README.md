@@ -1,4 +1,4 @@
-# badges: ![](https://custom-icon-badges.demolab.com/badge/Version-1.2fix1-green.svg?logo=git-branch-24)  ![](https://custom-icon-badges.demolab.com/badge/Version-1.2fix1-green.svg?logo=git-branch-24)
+# badges: ![](https://custom-icon-badges.demolab.com/badge/Version-1.2fix1-green.svg?logo=git-branch-24)  ![](https://custom-icon-badges.demolab.com/badge/Version-1.2fix1-green.svg?logo=git-branch-24&labelColor=light%20grey)
 
 `this is the main branch, Releases go here.`
 
