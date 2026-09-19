@@ -71,7 +71,7 @@ if not '%choice%'=='' set choice=%choice:~0,1%
 if '%choice%'=='1' goto audio
 if '%choice%'=='2' goto video
 if '%choice%'=='3' goto list
-if '%choice%'=='4' goto close 
+if '%choice%'=='4' exit
 echo Invalid choice, try again.
 goto start
 
@@ -83,7 +83,7 @@ echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\audio" -o "%%(title)s.%%(ext)s" -x --audio-format mp3 --audio-quality 192 --embed-thumbnail --embed-metadata --download-archive old.txt %URL%
 echo.
 cls
-goto start
+goto timer
 
 :video
 cls
@@ -93,6 +93,26 @@ echo.
 "appdata\yt-dlp-batch-v1.1.0\yt-dlp.exe" -P "downloads\video" -o "%%(title)s.%%(ext)s" -f "bv[ext=webm]+ba[ext=m4a]" --merge-output-format mp4 --embed-thumbnail --embed-metadata --download-archive old.txt %URL%
 echo.
 cls
+goto timer
+
+:timer
+set countdown=5
+
+:timer_loop
+cls
+echo Download completed. Going back to the main menu in...
+echo.
+echo       ====== %countdown% SECONDS ======
+echo.
+
+
+timeout /t 1 /nobreak >nul
+
+set /a countdown=%countdown%-1
+
+if %countdown% GEQ 0 goto timer_loop
+
+::at the end of the countdown, go back to the main menu
 goto start
 
 :: SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER,SPACER!
