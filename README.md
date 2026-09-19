@@ -1,5 +1,4 @@
-# badges: ![Dynamic Regex Badge](https://custom-icon-badges.demolab.com/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FMaso-be-ballin%2FYTDLP-Batch-app%2Frefs%2Fheads%2Fmain%2Fconfig.ini&search=version=(.*)&replace=%241&logo=git-branch-16hibeam&style=plastic&label=Version&color=#33cc33) ![total commits](https://custom-icon-badges.demolab.com/github/commit-activity/t/Maso-be-ballin/YTDLP-Batch-app/main?logo=git-commit&style=plastic) 
-
+# badges: ![Dynamic Regex Badge](https://custom-icon-badges.demolab.com/badge/dynamic/regex?url=https%3A%2F%2Fraw.githubusercontent.com%2FMaso-be-ballin%2FYTDLP-Batch-app%2Frefs%2Fheads%2Fmain%2Fconfig.ini&search=version=(.*)&replace=%241&logo=git-branch-16hibeam&style=plastic&label=Version&color=#33cc33) ![total commits](https://custom-icon-badges.demolab.com/github/commit-activity/t/Maso-be-ballin/YTDLP-Batch-app/main?style=plastic&logo=git-commit)
  
 
 `this is the main branch, Releases go here.`
