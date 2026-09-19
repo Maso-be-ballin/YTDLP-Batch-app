@@ -149,16 +149,18 @@ goto start
 
 :list
 cls
-echo list menu
+echo list menu, edit list.txt to add your links
 echo [1] Download Audio
 echo [2] Download Video
+echo [3] To main menu
 echo.
-SET /P choice="Type 1, OR 2 then press ENTER: "
+SET /P choice="Type 1, 2, OR 3 then press ENTER: "
 if not '%choice%'=='' set choice=%choice:~0,1%
 if '%choice%'=='1' goto list-audio
 if '%choice%'=='2' goto list-video
+if '%choice%'=='3' goto start
 echo Invalid choice, try again.
-goto start
+goto list
 
 :list-audio
 cls
