@@ -102,7 +102,7 @@ set countdown=5
 cls
 echo Download completed. Going back to the main menu in...
 echo.
-echo       ====== %countdown% SECONDS ======
+echo %countdown% seconds remaining...
 echo.
 
 
